@@ -1,7 +1,4 @@
-# the html code which will go in the file GFG.html
-html_template =
 <!DOCTYPE html>
-"""
 <html lang="pl">
 <head>
 <meta charset="UTF-8" />
@@ -9,15 +6,155 @@ html_template =
 name="viewport"
 content="width=device-width, initial-scale=1.0"
 />
-<title>My Website</title>
+<title>LAB01</title>
 <link
 rel="stylesheet"
 href="./style.css"
 />
 </head>
 <body>
-<main class="main-container">
-<h1>Welcome to My Website</h1>
+<main class="main-contain#r">
+<h1>Wykonane ćwiczenia:</h1>
+<ul>
+  <li><a href="#cw1" style="color: red;">Cw1</a></li>
+  <li><a href="#cw2" style="color: blue;">Cw2</a></li>
+  <li><a href="#cw3" style="color: green;">Cw3</a></li>
+</ul>
+    
+    <div id="cw1">
+        <h2>
+            Ćwiczenie 1: Artykuł
+        </h2>
+            <h2 class ="centrowanie">The pianist who never played</h2>
+            <h2 style="color: red;" class="centrowanie">Ian Li</h2>
+            <p class="centrowanie">Her deft fingers tapped silently in the air. They had been designed to play melodies, despite never having met a piano. <br>
+          How could they know this other pianist played better, if theyd never even heard her perform?<br>
+            <p></p>
+            <p class="centrowanie">The shed door creaked open and the butler walked in.<br>
+            His warm hands opened up the battery compartment on her back to swap out her fizzling battery.<br>
+            He turned to walk out, but stopped short when his eyes met her forlorn gaze.<br>
+            </p>
+            <p class="centrowanie">
+                “Its not your fault — your arrival was delayed due to a shipping disruption, and he got so impatient,<br>
+                 he bought a newer model at the local store… Dont be like that. Theres still hope.”<br>
+            </p>
+            <img src="artykul_zdjecie.jpeg" alt="artykulzdejcie" class="centrowanie_img" width="1000" height="500">
+    </div>
+
+    <div id="cw2">
+        <h2>
+            Ćwiczenie 2: Tabela
+        </h2>
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th>Nr.</th>
+                    <th>Nazwa Produktu</th>
+                    <th>Cena Produktu</th>
+                    <th>Ilosc sztuk</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Nr 1
+                    </td>
+                    <td>
+                        Nazwa 1
+                    </td>
+                    <td>
+                        100PLN
+                    </td>
+                    <td>
+                        10 sztuk
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Nr 2
+                    </td>
+                    <td>
+                        Nazwa 2
+                    </td>
+                    <td>
+                        50PLN
+                    </td>
+                    <td>
+                        20 sztuk
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Nr 3
+                    </td>
+                    <td>
+                        Nazwa 3
+                    </td>
+                    <td>
+                        900PLN
+                    </td>
+                    <td>
+                        1 sztuka
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Nr 5
+                    </td>
+                    <td>
+                        Nazwa 5
+                    </td>
+                    <td>
+                        800PLN
+                    </td>
+                    <td>
+                        1 sztuka
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Nr 5
+                    </td>
+                    <td>
+                        Nazwa 5
+                    </td>
+                    <td>
+                        10900PLN
+                    </td>
+                    <td>
+                        2 sztuki
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="cw3">
+        
+        <h2>
+            Ćwiczenie 3: Kwadraty
+        </h2>
+        <div class="container">
+            <div class="kwadrat"  style="background-color:powderblue;">
+                <p>meow</p>
+            </div>
+            <div class="kwadrat" style="background-color:blue;">
+                <p>meow<br>meow</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="kwadrat" style="background-color:violet;">
+                <p>meow<br>meow<br>meow</p>
+            </div>
+            <div class="kwadrat" style="background-color:pink;">
+                <p>meow<br>meow<br>meow<br>meow</p>
+            </div>
+            <div class="kwadrat" style="background-color:blueviolet;">
+                <img src="artykul_zdjecie.jpeg" alt="alt1" width="100" height="100">
+            </div>
+        </div>
+
+    </div>
 </main>
 </body>
 </html>
