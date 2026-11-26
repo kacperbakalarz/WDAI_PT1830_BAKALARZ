@@ -16,11 +16,11 @@ struct ContentView: View {
     @State private var currentBirdImage = "yellowbird-midflap"
     @State private var currentBG = "background-day"
     @State private var startScreen = true
-    
+    @State private var leaderboard: [Int] = []
     
     let pipeWidth: CGFloat = 60
     let pipeGapHeight: CGFloat = 170
-    let pipeSpeed: CGFloat = 3.0
+    let pipeSpeed: CGFloat = 6.0
     let baseHeight: CGFloat = 112
     
     let gravity: CGFloat = 0.35
@@ -167,6 +167,17 @@ struct ContentView: View {
                         .background(Color.orange)
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        VStack(spacing: 0){
+                            ForEach(Array(leaderboard.prefix(5).enumerated()), id: \.offset) { index, element in
+                                Text("#\(index+1): \(element)" )
+                            }
+                            .font(.headline)
+                            .padding(.horizontal, 15)
+                            .padding(.vertical, 5)
+                            .background(Color.orange)
+                            .foregroundColor(.white)
+                            
+                        }
                         
                     }
                 }
@@ -177,6 +188,7 @@ struct ContentView: View {
                 pipeX = geo.size.width + pipeWidth
                 pipeGapY = geo.size.height * 0.45
                 birdY = geo.size.height * 0.4
+
             }
             .onKeyPress(.return) {
                 startScreen = false
@@ -199,10 +211,13 @@ struct ContentView: View {
                 velocity += gravity
                 birdY += velocity
                 
+                //ground collision
                 if birdY >= floorY {
                     playSound("die")
                     birdY = floorY
                     velocity = 0
+                    leaderboard.append(counter)
+                    leaderboard.sort(by: >)
                     isGameOver = true
                 }
                 if birdY <= ceilingY{
@@ -233,6 +248,8 @@ struct ContentView: View {
                     playSound("hit")
                     playSound("die")
                     velocity = 0
+                    leaderboard.append(counter)
+                    leaderboard.sort(by: >)
                     isGameOver = true
                     
                 }
@@ -242,6 +259,8 @@ struct ContentView: View {
                     playSound("hit")
                     playSound("die")
                     velocity = 0
+                    leaderboard.append(counter)
+                    leaderboard.sort(by: >)
                     isGameOver = true
                     
                 }
@@ -256,8 +275,8 @@ struct ContentView: View {
                 
                 if pipeX < -pipeWidth {
                     pipeX = geo.size.width + pipeWidth
-                    let minGapY = pipeGapHeight / 2 + 240
-                    let maxGapY = geo.size.height - baseHeight - pipeGapHeight / 2 - 240
+                    let minGapY = pipeGapHeight / 2 + 60
+                    let maxGapY = geo.size.height - baseHeight - pipeGapHeight / 2 - 60
                     if maxGapY > minGapY {
                         pipeGapY = CGFloat.random(in: minGapY...maxGapY)
                     }
